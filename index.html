@@ -11,27 +11,27 @@
 </head>
 <body>
 <style>
-    /* Style for the dropdown boxes */
+    
    
     select {
-        border: 1px solid #ccc; /* Box outline color */
-        padding: 5px; /* Adjust as needed */
-        background-color: #fff; /* Background color inside the box */
-        border-radius: 5px; /* Rounded corners, adjust as needed */
+        border: 1px solid #ccc; 
+        padding: 5px;  
+        background-color: #fff; 
+        border-radius: 5px; 
     }
 
-    /* Style for the labels */
+    
     label {
         font-weight: bold;
         display: inline-block;
-        margin-bottom: 5px; /* Add margin between label and select */
-        font-size: 14px; /* Adjust font size */
+        margin-bottom: 5px; 
+        font-size: 14px; 
     }
 
-    /* Display the dropdown boxes horizontally */
+    
     select {
         display: inline-block;
-        margin-right: 10px; /* Add margin between the two dropdowns */
+        margin-right: 10px; 
     }
 </style>
 
@@ -63,16 +63,16 @@
     </select>
     
     <script>
-        // List of cities
+        
         const cities = ["Hampi", "Switzerland", "Australia", "Singapore", "Kerala", "Dubai", "Paris", "Bali"];
     
-        // Get the dropdown element
+     
         const select = document.getElementById("fromCity");
     
-        // Retrieve previously selected value from session storage (if available)
+   
         const selectedCity = sessionStorage.getItem("fromCity");
     
-        // Populate the dropdown with city options
+        
         cities.forEach(city => {
             const option = document.createElement("option");
             option.value = city;
@@ -83,7 +83,6 @@
             select.appendChild(option);
         });
     
-        // Store selected value in session storage upon change
         select.addEventListener("change", function() {
             sessionStorage.setItem("fromCity", this.value);
         });
@@ -96,16 +95,16 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // List of cities
+
         const cities = ["Hampi", "Switzerland", "Australia", "Singapore", "Kerala", "Dubai", "Paris", "Bali"];
 
-        // Get the dropdown element
+      
         const select = document.getElementById("toCity");
 
-        // Retrieve previously selected value from session storage (if available)
+
         const selectedCity = sessionStorage.getItem("toCity");
 
-        // Ensure dropdown is populated with city options
+       
         cities.forEach(city => {
             const option = document.createElement("option");
             option.value = city;
@@ -116,7 +115,6 @@
             select.appendChild(option);
         });
 
-        // Store selected value in session storage upon change
         select.addEventListener("change", function() {
             sessionStorage.setItem("toCity", this.value);
         });
@@ -130,7 +128,7 @@
     }
 
     function explorePackages() {
-        submitForm(); // Call the same function for both buttons
+        submitForm(); 
     }
 </script>
 
@@ -140,7 +138,6 @@
                     </div>
 
         
-                    <!-- Reuse the same modal functions for Explore -->
                         <input type="button" value="Explore" onclick="explorePackages()">
   
                         
@@ -161,7 +158,7 @@
                                 <h5>Hampi<br> <span>$950</span></h5>
                             </div>
                         
-                            <!-- The Modal -->
+                           
                             <div id="myModal" class="modal">
                                 <!-- Modal content -->
                                 <div class="modal-content">
@@ -180,7 +177,7 @@
                                 <h5>The Republic City<br> <span>$650</span></h5>
                             </div>
                         
-                            <!-- The Modal for Singapore -->
+                           
                             <div id="myModalSingapore" class="modal">
                                 <!-- Modal content -->
                                 <div class="modal-content">
@@ -199,9 +196,9 @@
                                 <h5>Zurich<br> <span>$1050</span></h5>
                             </div>
                         
-                            <!-- The Modal for Switzerland -->
+                           
                             <div id="myModalSwitzerland" class="modal">
-                                <!-- Modal content -->
+                               
                                 <div class="modal-content">
                                     <span class="close" onclick="closeModal('myModalSwitzerland')">&times;</span>
                                     <p>~ Zurich is located in the central part of Switzerland, in the northern-central region of the country. <br>~ A large freshwater lake that stretches along the eastern side of the city, providing a serene and scenic environment. <br>~ A prominent hill located to the west of Zurich, offering panoramic views of the city, Lake Zurich, and the Swiss Alps. <br>~ A peaceful oasis featuring diverse plant collections, themed gardens, and greenhouses. <br>~ Picturesque promenades along the shores of Lake Zurich, providing a peaceful setting for walking and enjoying nature. <br>~ A place for nature lovers and those interested in plant biodiversity. <br>~ Located in the Zurichberg district, the arboretum features a diverse collection of trees and shrubs.</p>
@@ -217,9 +214,8 @@
                                 <h5>Sydney<br> <span>$1750</span></h5>
                             </div>
                         
-                            <!-- The Modal for Australia -->
+                            
                             <div id="myModalAustralia" class="modal">
-                                <!-- Modal content -->
                                 <div class="modal-content">
                                     <span class="close" onclick="closeModal('myModalAustralia')">&times;</span>
                                     <p>~ The Sydney Opera House is a globally recognized symbol of Australia and one of the most distinctive and iconic architectural structures in the world. <br>~ The design of the Sydney Opera House is characterized by its shell-like structures, resembling sails or shells. <br>~ The Opera House is often illuminated at night with various colors and designs, creating a stunning visual spectacle against the Sydney skyline. <br>~ Beyond its architectural significance, the Sydney Opera House serves as a cultural hub, fostering artistic expression and creativity in various forms. <br>~ The tours provide insights into the functioning of this cultural landmark. <br>~ The Sydney Opera House stands as a testament to human creativity and innovation, attracting millions of visitors each year to experience its architectural beauty and cultural richness. <br>~ The Opera House has played a key role in shaping the cultural identity of Sydney.</p>
@@ -373,7 +369,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
         <style>
-        /* Style for modal content */
+       
         #customSubscriptionModal {
             display: none;
             position: fixed;
@@ -390,19 +386,19 @@
             z-index: 1000;
         }
 
-        /* Style for modal overlay */
+   
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Change the color here */
+            background: rgba(0, 0, 0, 0.5); 
             z-index: 900;
             display: none;
         }
 
-        /* Style for close button */
+        
         #customSubscriptionModal button {
             background-color: #333;
             color: #fff;
@@ -413,7 +409,7 @@
         }
     </style>
 </head>
-<!-- Your existing HTML code -->
+
 <body>
     <div class="input">
         <input type="text" id="emailInput" placeholder="Enter your Email Address">
@@ -431,10 +427,10 @@
         <li>5671 <br> <h6>Years of Experiences in travel industry</h6></li>
         <li>8910 <br> <h6>Global <br>Partnership</h6></li>
         <li>3456<br> <h6> Achievement Awards since 2021</h6></li>
-        <li id="subscriberCount"><br> <h6> Subscribe</h6></li>
+       
     </ul>
 
-  <!-- Your existing HTML code -->
+
 
 <script src="js/tamann.js"></script>
 </body>
