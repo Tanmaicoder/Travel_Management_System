@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style1.css">
+    <title>travel</title>
+</head>
+<body>
+<style>
+    
+   
+    select {
+        border: 1px solid #ccc; 
+        padding: 5px; 
+        background-color: #fff; 
+        border-radius: 5px; 
+    }
+
+    
+    label {
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 5px; 
+        font-size: 14px;
+    }
+
+
+    select {
+        display: inline-block;
+        margin-right: 10px; 
+    }
+</style>
+
+    
+    <header>
+        <nav>
+            <h4>East West Travel</h4>
+            <ul id="menu_bx">
+                
+            
+                <li><a href=admin/admin_details.html>Devlopers</a></li>
+            </ul>
+            <i class="bi bi-three-dots"></i>
+        </nav>
+        <div class="content">
+            <div class="cont_bx">
+                <h1>The right destination for you and your family</h1>
+                <p>Creative taglines have the capability of capturing the attention of potential customers</p>
+                <button>Start your search</button>
+            </div>
+            <div class="trip_bx">
+                <div class="search_bx">
+
+         
+                <form method="post" action="http://localhost/project2/contacts.php">
+    <label for="fromCity">From City:</label>
+    <select id="fromCity" name="fromCity">
+        <option value="" selected>Select City</option>
+    </select>
+    
+    <script>
+       
+        const cities = ["Hampi", "Switzerland", "Australia", "Singapore", "Kerala", "Dubai", "Paris", "Bali"];
+    
+        
+        const select = document.getElementById("fromCity");
+    
+        
+        const selectedCity = sessionStorage.getItem("fromCity");
+    
+        
+        cities.forEach(city => {
+            const option = document.createElement("option");
+            option.value = city;
+            option.textContent = city;
+            if (city === selectedCity) {
+                option.selected = true;
+            }
+            select.appendChild(option);
+        });
+    
+        
+        select.addEventListener("change", function() {
+            sessionStorage.setItem("fromCity", this.value);
+        });
+    </script>
+
+<label for="toCity">To City:</label>
+<select id="toCity" name="toCity">
+    <option value="" selected>Select City</option>
+</select>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    
+        const cities = ["Hampi", "Switzerland", "Australia", "Singapore", "Kerala", "Dubai", "Paris", "Bali"];
+
+       
+        const select = document.getElementById("toCity");
+
+       
+        const selectedCity = sessionStorage.getItem("toCity");
+
+     
+        cities.forEach(city => {
+            const option = document.createElement("option");
+            option.value = city;
+            option.textContent = city;
+            if (city === selectedCity) {
+                option.selected = true;
+            }
+            select.appendChild(option);
+        });
+
+      
+        select.addEventListener("change", function() {
+            sessionStorage.setItem("toCity", this.value);
+        });
+    });
+</script>
+</form>
+
+<script>
+    function submitForm() {
+        document.forms[0].submit();
+    }
+
+    function explorePackages() {
+        submitForm(); 
+    }
+</script>
+
+                    <div class="card">
+                        <h4>Date <i class="bi bi-caret-down-fill"></i></h4>
+                        <input type="date">
+                    </div>
+
+        
+                        <input type="button" value="Explore" onclick="explorePackages()">
+  
+                        
+                </div>
+
+
+
+                <div class="travel_bx">
+                    <h4>Countries to travel</h4>
+                    <div class="cards">
+
+
+                        <div class="card">
+                            <h3>INDIA <img src="icon/india.png" alt=""></h3>
+                            <img src="img/hampi.jpg" alt="">
+                            <div class="btn_city">
+                                <a href="#" id="openModal">Read</a>
+                                <h5>Hampi<br> <span>$950</span></h5>
+                            </div>
+                        
+                        
+                            <div id="myModal" class="modal">
+                                
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeModal()">&times;</span>
+                                    <p>~ The Stone Chariot is located in the Vittala Temple complex in Hampi, a UNESCO World Heritage Site in Karnataka, India. <br> ~ The Stone Chariot is a finely crafted and intricate structure made entirely of granite. <br>~ The chariot is designed to resemble a temple chariot (Ratha) with wheels, horses, and other decorative elements. <br>~ The entire chariot is carved from a single massive boulder of granite, showcasing the skill of the artisans of that era. <br>~ The Vittala Temple complex, where the Stone Chariot is situated, is also famous for its musical pillars. When struck, these pillars produce musical tones. <br>~ The Stone Chariot was likely constructed as a symbol of the artistic and architectural prowess of the Vijayanagara Empire. <br>~ The chariot is often considered a symbol of the divine journey or celestial vehicle of Lord Vishnu.</p>
+                                </div>
+                            </div>                          
+                        </div>
+
+
+                        <div class="card">
+                            <h3>SINGAPORE <img src="icon/singapore.png" alt=""></h3>
+                            <img src="img/The Republic of Singapore.jpg" alt="">
+                            <div class="btn_city">
+                                <a href="#" id="openModalSingapore">Read</a>
+                                <h5>The Republic City<br> <span>$650</span></h5>
+                            </div>
+                       
+                            <div id="myModalSingapore" class="modal">
+                          
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeModal('myModalSingapore')">&times;</span>
+                                    <p>~ Singapore is a small island country situated at the southern tip of the Malay Peninsula, separated from Malaysia by the Johor Strait. <br>~ A long coastal park with barbecue pits, beaches, and cycling paths. It's a great place for a seaside picnic with family and friends. <br>~ A scenic reservoir with a panoramic view of the city skyline. The wide open spaces and grassy areas make it an ideal spot for a relaxing picnic. <br>~ A nature reserve with hiking trails and a variety of flora and fauna. <br>~ It's a peaceful retreat in the heart of the city. <br>~ There are picnic areas where you can enjoy nature surrounded by the rainforest. <br>~ This historical park in the city center offers shaded areas, manicured lawns, and a hilltop with great views.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                                
+                        <div class="card">
+                            <h3>Switzerland <img src="icon/switzerland.png" alt=""></h3>
+                            <img src="img/Zurich.jpg" alt="">
+                            <div class="btn_city">
+                                <a href="#" id="openModalSwitzerland">Read</a>
+                                <h5>Zurich<br> <span>$1050</span></h5>
+                            </div>
+                        
+                            <div id="myModalSwitzerland" class="modal">
+                              
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeModal('myModalSwitzerland')">&times;</span>
+                                    <p>~ Zurich is located in the central part of Switzerland, in the northern-central region of the country. <br>~ A large freshwater lake that stretches along the eastern side of the city, providing a serene and scenic environment. <br>~ A prominent hill located to the west of Zurich, offering panoramic views of the city, Lake Zurich, and the Swiss Alps. <br>~ A peaceful oasis featuring diverse plant collections, themed gardens, and greenhouses. <br>~ Picturesque promenades along the shores of Lake Zurich, providing a peaceful setting for walking and enjoying nature. <br>~ A place for nature lovers and those interested in plant biodiversity. <br>~ Located in the Zurichberg district, the arboretum features a diverse collection of trees and shrubs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>Australia <img src="icon/australia.png" alt=""></h3>
+                            <img src="img/Sydney.png" alt="">
+                            <div class="btn_city">
+                                <a href="#" id="openModalAustralia">Read</a>
+                                <h5>Sydney<br> <span>$1750</span></h5>
+                            </div>
+                        
+                       
+                            <div id="myModalAustralia" class="modal">
+                              
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeModal('myModalAustralia')">&times;</span>
+                                    <p>~ The Sydney Opera House is a globally recognized symbol of Australia and one of the most distinctive and iconic architectural structures in the world. <br>~ The design of the Sydney Opera House is characterized by its shell-like structures, resembling sails or shells. <br>~ The Opera House is often illuminated at night with various colors and designs, creating a stunning visual spectacle against the Sydney skyline. <br>~ Beyond its architectural significance, the Sydney Opera House serves as a cultural hub, fostering artistic expression and creativity in various forms. <br>~ The tours provide insights into the functioning of this cultural landmark. <br>~ The Sydney Opera House stands as a testament to human creativity and innovation, attracting millions of visitors each year to experience its architectural beauty and cultural richness. <br>~ The Opera House has played a key role in shaping the cultural identity of Sydney.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+
+                </div>
+            </div>
+        </div> 
+    </header>
+    <div class="offers">
+        <h1>Prime Package Offers for you</h1>
+        <p>choose your next destination</p>
+        <div class="cards">
+        <div class="card">
+            <h3>Lake-Kerala</h3>
+            <div class="img_text">
+            <a href="html/kerala.html">
+  <img src="html/kerala.jpg" alt="">
+</a>
+
+            
+                <h4>Included: Air ticket, Hotel, Tour, Pickup service</h4>
+            </div>
+            <div class="cont_bx">
+                <div class="price">
+                    <div class="like_chat">
+                        <i class="bi bi-hand-thumbs-up-fill"><span>77777</span></i>
+                        <i class="bi bi-chat-dots-fill"><span>1076</span></i>
+                    </div>
+                    <div class="info_price">
+                        <a href="">More Info</a>
+                        <h4>$234</h4>
+                    </div>
+                </div>
+                <div class="days">7 days <br> India</div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Burj khalfia-Dubai</h3>
+            <div class="img_text">
+            <a href="html/dubai.html">
+                <img src="html/Burj khaifa-Dubai.jpg" alt="">
+                    </a>
+                <h4>Included: Air ticket, Hotel, Tour, Pickup service</h4>
+            </div>
+            <div class="cont_bx">
+                <div class="price">
+                    <div class="like_chat">
+                        <i class="bi bi-hand-thumbs-up-fill"><span>66666</span></i>
+                        <i class="bi bi-chat-dots-fill"><span>2076</span></i>
+                    </div>
+                    <div class="info_price">
+                        <a href="">More Info</a>
+                        <h4>$456</h4>
+                    </div>
+                </div>
+                <div class="days">8 days <br> Dubai</div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Eiffel Tower-Paris</h3>
+            <div class="img_text">
+            <a href="html/Paris.html">
+                <img src="html/Paris.jpg" alt="">
+                </a>
+                <h4>Included: Air ticket, Hotel, Tour, Pickup service</h4>
+            </div>
+            <div class="cont_bx">
+                <div class="price">
+                    <div class="like_chat">
+                        <i class="bi bi-hand-thumbs-up-fill"><span>88888</span></i>
+                        <i class="bi bi-chat-dots-fill"><span>3076</span></i>
+                    </div>
+                    <div class="info_price">
+                        <a href="">More Info</a>
+                        <h4>$789</h4>
+                    </div>
+                </div>
+                <div class="days">9 days <br> Paris</div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Uluwatu Temple-Bali</h3>
+            <div class="img_text">
+            <a href="html/bali.html">
+                <img src="html/Bali.jpg" alt="">
+                </a>
+                <h4>Included: Air ticket, Hotel, Tour, Pickup service</h4>
+            </div>
+            <div class="cont_bx">
+                <div class="price">
+                    <div class="like_chat">
+                        <i class="bi bi-hand-thumbs-up-fill"><span>99999</span></i>
+                        <i class="bi bi-chat-dots-fill"><span>4076</span></i>
+                    </div>
+                    <div class="info_price">
+                        <a href="">More Info</a>
+                        <h4>$101112</h4>
+                    </div>
+                </div>
+                <div class="days">6 days <br> Bali</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="destination">
+        <div class="des_bx">
+        <h4>Our Destination</h4>
+        <p>choose your next Destination</p>
+        <li>India</li>
+        <li>Singapore</li>
+        <li>Australia</li>
+        <li>Switzerland</li>
+        <li>Paris</li>
+        <li>Bali</li>
+        <li>Dubai</li>
+        <h6>Included: Air ticket, Hotel, Tour, Pickup service</h6>
+        
+        <a href="html/moreinfo.html"><button>MORE INFO</button></a>
+        </div>
+        <div class="img_bx">
+            <img src="img/travels.jpg" alt="">
+            <div class="msg">
+                <img src="icon/bg.png" alt="">
+                <div class="cont">
+                <h4>India</h4>
+                <div class="icon">
+                    <i class="bi bi-hand-thumbs-up-fill"><span>77777</span></i>
+                        <i class="bi bi-chat-dots-fill"><span>1076</span></i>
+                    </div>
+                </div>
+            </div>
+            <div class="msg">
+                <img src="icon/bg1.png" alt="">
+                <div class="cont">
+                <h4>Australia</h4>
+                <div class="icon">
+                    <i class="bi bi-hand-thumbs-up-fill"><span>11111</span></i>
+                        <i class="bi bi-chat-dots-fill"><span>1376</span></i>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <h2>Subscribe & <br>get special discount</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        <style>
+        
+        #customSubscriptionModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            z-index: 1000;
+        }
+
+     
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); 
+            z-index: 900;
+            display: none;
+        }
+
+        #customSubscriptionModal button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input">
+        <input type="text" id="emailInput" placeholder="Enter your Email Address">
+        <button onclick="subscribe()">Subscribe</button>
+    </div>
+
+    <div id="customSubscriptionModal" class="custom-modal">
+        <p>You are subscribed!</p>
+        <button onclick="closeCustomModal()">Close</button>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <ul>
+        <li>5671 <br> <h6>Years of Experiences in travel industry</h6></li>
+        <li>8910 <br> <h6>Global <br>Partnership</h6></li>
+        <li>3456<br> <h6> Achievement Awards since 2021</h6></li>
+    </ul>
+
+  
+
+<script src="js/tamann.js"></script>
+</body>
+</html>
