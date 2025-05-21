@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <title>Paris Tour Package</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('Paris.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-weight: bold;
+            color: #26201e;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif; /* Use Poppins font */
+        }
+
+        h2 {
+            color: #4fe082; /* Change the color for consistency */
+            margin-bottom: 15px; /* Add margin to separate heading from content */
+        }
+
+        ul {
+            padding: 0; /* Remove default padding from the unordered list */
+            list-style-type: none; /* Remove bullet points from the list */
+        }
+
+        li {
+            margin-bottom: 10px; /* Add margin to separate list items */
+        }
+
+        button {
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px; /* Add some spacing between content and button */
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Your existing styles remain unchanged */
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        
+
+        /* Your existing styles remain unchanged */
+
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        #bookingForm {
+            background-color: #fff;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        #backBtn {
+            background-color: #ccc;
+            color: #333;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #backBtn:hover {
+            background-color: #bbb;
+        }
+        
+    </style>
+</head>
+<body>
+    <section id="packageDetails">
+        <h1>Paris Special Tour Package</h1> <!-- Update the heading for Paris package -->
+
+        <h2>Special Tour Package</h2>
+        <p>Discover the romantic charm and cultural beauty of Paris with our special tour package. Immerse yourself in the iconic landmarks, world-class art, and exquisite cuisine.</p>
+        <ul>
+            <li><strong>Duration:</strong> 6 days</li> <!-- Adjust the duration for Paris package -->
+            <li><strong>Destinations:</strong>
+                <ul>
+                    <li><strong>Eiffel Tower:</strong> Experience the breathtaking views from the iconic Eiffel Tower.</li>
+                    <li><strong>Louvre Museum:</strong> Explore the world's largest art museum and a historic monument in Paris.</li>
+                    <li><strong>Montmartre:</strong> Discover the artistic and bohemian neighborhood of Montmartre.</li>
+                    <li><strong>Seine River Cruise:</strong> Enjoy a romantic cruise along the Seine River.</li>
+                </ul>
+            </li>
+            <li><strong>Activities:</strong>
+                <ul>
+                    <li><strong>Cultural Tours:</strong> Visit historic landmarks and immerse yourself in Parisian culture.</li>
+                    <li><strong>Fine Dining:</strong> Indulge in exquisite French cuisine at renowned restaurants.</li>
+                    <li><strong>Art Appreciation:</strong> Explore world-class art collections in various museums.</li>
+                </ul>
+            </li>
+            <li><strong>Price:</strong> $6000 (Include the actual price here)</li> <!-- Update the price for Paris package -->
+        </ul>
+        <p>Don't miss the chance to experience the romance and elegance of Paris with our carefully curated special tour package.</p>
+        
+        <button id="bookNowBtn" onclick="showBookingForm()">Book Now</button>
+    </section>
+
+    <div id="modal">
+       
+       
+        
+      
+        <form id="bookingForm" action="process_booking.php" method="post">
+            
+            
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="from">Traveling From:</label>
+            <input type="text" id="from" name="from" required>
+
+            <label for="to">Traveling To:</label>
+<input type="text" id="to" name="to" placeholder="Enter destination (default: Paris)" required>
+
+
+            <label for="date">Travel Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="persons">Number of Persons:</label>
+            <input type="number" id="persons" name="persons" min="1" required>
+
+            <button type="button" id="backBtn" onclick="hideBookingForm()">Back</button>
+            <button type="submit" onclick="submitBooking()">Submit Booking</button>
+            
+        </form>
+    </div>
+
+    <script>
+
+        function hideBookingForm() {
+            document.getElementById('modal').style.display = 'none';
+        }
+        
+        function showBookingForm() {
+            document.getElementById('modal').style.display = 'flex';
+        
+            // Set default value for "Traveling To" input
+            document.getElementById('to').value = 'Paris';
+        }
+        
+
+        function submitBooking() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var from = document.getElementById('from').value;
+            var to = document.getElementById('to').value;
+            var date = document.getElementById('date').value;
+            var persons = document.getElementById('persons').value;
+
+           
+            
+
+            // Hide the modal after submission
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
+
+    

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        /* Add your styles here */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .back-btn {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        /* Add a class for disabled buttons and icons */
+        .disabled-button,
+        .disabled-icon {
+            pointer-events: none; /* Disable pointer events */
+            opacity: 0.5; /* Adjust opacity for a visual cue */
+        }
+
+        /* Style for hover effect */
+        .buttons button:hover:not(.disabled-button) {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        /* Style for hover effect on social icons */
+        .social-icons a:hover:not(.disabled-icon) {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Profile Card 1 -->
+        <div class="wrapper" id="profileCard1">
+            <div class="img-area">
+                <div class="inner-area">
+                    <img src="User_Executive_1.webp" alt="">
+                </div>
+            </div>
+            
+           
+            <div class="name">Tanmai N</div>
+            <div class="about">B.E  CSE (3rd year) <br> EWCE , yelahanka</div>
+            <div class="social-icons">
+                <a href="#" class="fb disabled-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="twitter disabled-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="insta disabled-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="linkedin disabled-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <div class="buttons">
+                <button id="aboutButton1" onclick="openModal('Tanmai N', 'Front end work of the website managed by tanmai N')">About</button>
+            </div>
+        </div>
+
+        <!-- Profile Card 2 -->
+        <div class="wrapper" id="profileCard2">
+            <div class="img-area">
+                <div class="inner-area">
+                    <img src="User_Executive_1.webp" alt="">
+                </div>
+            </div>
+            
+            <div class="name">Udaya Kumar Shetty</div>
+            <div class="about">B.E  CSE (3rd year) <br> EWCE , yelahanka</div>
+            <div class="social-icons">
+                <a href="#" class="fb disabled-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="twitter disabled-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="insta disabled-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="linkedin disabled-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <div class="buttons">
+                <button id="aboutButton2" onclick="openModal('Udaya Kumar Shetty', 'Database and PHP managed by uday shetty')">About</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalName"></h2>
+            <p id="modalAbout"></p>
+            <button class="back-btn" onclick="closeModal()">Back</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(name, about) {
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalAbout').innerText = about;
+            document.getElementById('myModal').style.display = 'flex';
+
+            // Disable buttons and icons on the profile cards
+            document.getElementById('aboutButton1').classList.add('disabled-button');
+            document.getElementById('aboutButton2').classList.add('disabled-button');
+
+            document.querySelectorAll('.social-icons a').forEach(function (icon) {
+                icon.classList.add('disabled-icon');
+            });
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+
+            // Enable buttons and icons on the profile cards
+            document.getElementById('aboutButton1').classList.remove('disabled-button');
+            document.getElementById('aboutButton2').classList.remove('disabled-button');
+
+            document.querySelectorAll('.social-icons a').forEach(function (icon) {
+                icon.classList.remove('disabled-icon');
+            });
+        }
+    </script>
+</body>
+
+</html>
